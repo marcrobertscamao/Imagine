@@ -144,6 +144,9 @@ final class Imagine extends AbstractImagine
         return new Font(new \Imagick(), $file, $size, $color);
     }
 
+    
+    const COLORSPACE_SGRAY = 35;
+    
     /**
      * Returns the palette corresponding to an \Imagick resource colorspace
      *
@@ -162,6 +165,7 @@ final class Imagine extends AbstractImagine
             case \Imagick::COLORSPACE_CMYK:
                 return new CMYK();
             case \Imagick::COLORSPACE_GRAY:
+            case self::COLORSPACE_SGRAY;
                 return new Grayscale();
             default:
                 throw new NotSupportedException('Only RGB and CMYK colorspace are currently supported');
