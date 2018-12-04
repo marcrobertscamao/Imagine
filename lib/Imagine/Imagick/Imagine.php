@@ -161,6 +161,7 @@ final class Imagine extends AbstractImagine
         switch ($imagick->getImageColorspace()) {
             case \Imagick::COLORSPACE_RGB:
             case \Imagick::COLORSPACE_SRGB:
+            case \Imagick::COMPOSITE_LUMINIZE:
                 return new RGB();
             case \Imagick::COLORSPACE_CMYK:
                 return new CMYK();
